@@ -11,16 +11,21 @@ window.onload = function() {
   let noun = ["jogger", "racoon"];
   let tld = [".us", ".com", ".net"];
 
-  let domains = "";
-  for (const p in pronoun) {
-    for (const a in adj) {
-      for (const n in noun) {
-        for (const d in tld) {
-          domains += pronoun[p] + adj[a] + noun[n] + tld[d] + "<br>";
+  document.getElementById("show").addEventListener("click", function() {
+    let domains = "";
+    for (const p in pronoun) {
+      for (const a in adj) {
+        for (const n in noun) {
+          for (const d in tld) {
+            domains += pronoun[p] + adj[a] + noun[n] + tld[d] + "<br>";
+          }
         }
       }
     }
-  }
-  document.getElementById("domains").innerHTML = domains;
-  this.console.log(domains);
+    let p = document.getElementById("domains");
+    p.innerHTML = domains;
+    console.log(domains);
+
+    p.hidden = false;
+  });
 };
